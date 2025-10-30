@@ -38,56 +38,21 @@
 
     <!-- Main CSS File -->
     <link href="./css/main.css" rel="stylesheet">
-    <style>
-        /* Base hero layout */
-       .hero.has-video {
-        position: relative;
-        min-height: 80vh;    /* adjust (70–90vh) to taste */
-        overflow: hidden;
-        color: #fff;
-        }
 
-        /* Background video behind everything */
-        .hero-video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;       /* behaves like background-size: cover */
-        object-position: center 90%; /* nudge focus slightly above bottom if you like */
-        z-index: 0;
-        pointer-events: none;    /* clicks pass through to carousel controls */
-        }
-
-        /* Dark gradient overlay above video */
-        .hero-overlay {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25));
-        
-        }
-
-        .hero h1, .hero h2, .hero p {
-        text-shadow: 0 2px 8px rgba(0,0,0,.45);
-        }
-
-
-        /* Respect user motion preferences */
-        @media (prefers-reduced-motion: reduce) {
-        .hero-video { display: none; }
-        .hero-overlay { background: rgba(0,0,0,.55); } /* simple overlay fallback */
-        }
-    </style>
+    <script>
+        window.addEventListener('load', () => {
+        setTimeout(() => AOS.refresh(), 300);
+        });
+        </script>
+    
 </head>
 <body class="index-page">
     <header id="header" class="header d-flex align-items-center fixed-top">
-        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+        <div class="container-fluid position-relative d-flex align-items-center justify-content-center">
 
-            <a href="index.html" class="logo d-flex align-items-center ">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <a href="index.html" class="logo d-flex align-items-center ">
                 <img class="navbar-brand" src="./img/noBgWhite.png" alt="">
-            </a>
+            </a> -->
 
             <nav id="navmenu" class="navmenu">
                 <ul>
@@ -105,65 +70,42 @@
 
     <main class="main">
         <!-- Hero Section -->
-         <!-- Hero Section -->
-<section id="hero" class="hero section hero-bg has-video">
+        <section id="hero" class="hero section hero-wave">
+        
+            <div id="hero-carousel" class="container carousel carousel-fade" data-bs-ride="carousel">
+            <!-- Slide 1 -->
+            <div class="carousel-item active call-to-action">
+                <div class="carousel-container">
+                <img src="./img/noBgWhiteWelcome.png" alt="" style="max-height: 20vh;">
+                <p class="animate__animated animate__fadeInUp pt-4">
+                    We specialize in custom signs and lettering that bring your brand to life. From storefront displays to vehicle wraps, we craft high-quality visuals that stand out and stand the test of time. Proudly serving the Greater Columbus area with reliable service and creative design.
+                </p>
+                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+            </div>
 
-  <!-- Background video -->
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./img/hero-poster.jpg">
-    <source src="./img/hero-bg.mp4" type="video/mp4">
-    <!-- Optional: add WebM for smaller size in some browsers -->
-    <!-- <source src="./videos/hero-bg.webm" type="video/webm"> -->
-    Your browser does not support the video tag.
-  </video>
+            <!-- <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a> -->
+            </div>
 
-  <!-- Overlay (dark gradient) -->
-  <div class="hero-overlay"></div>
-
- 
-    <div id="hero-carousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="carousel-container">
-          <img src="./img/noBgWhiteWelcome.png" alt="" style="max-height: 20vh;">
-          <p class="animate__animated animate__fadeInUp pt-4">
-            We specialize in custom signs and lettering that bring your brand to life. From storefront displays to vehicle wraps, we craft high-quality visuals that stand out and stand the test of time. Proudly serving the Greater Columbus area with reliable service and creative design.
-          </p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown" style="color: white;">Local Service <span>You Can Trust</span></h2>
-          <p class="animate__animated animate__fadeInUp">Based in the heart of Columbus, we’re proud to work with businesses and individuals throughout the region. Reliable, responsive, and always focused on getting the details right.</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown" style="color: white;">Bold Vinyl Graphics. <span>Built to Move.</span></h2>
-          <p class="animate__animated animate__fadeInUp">From USDOT numbers and fleet decals to wraps and window signage, we deliver clean, high-impact vinyl solutions that get your business noticed—on the road and in the storefront. Durable. Professional. Fast turnaround.</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
-        </div>
-      </div>
-
-      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
-      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
-    </div>
-
-    
-  </div>
-</section>
-<!-- /Hero Section -->
-
+            
+        <!-- Waves -->
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+            </defs>
+            <g class="wave1"><use xlink:href="#wave-path" x="50" y="3"></use></g>
+            <g class="wave2"><use xlink:href="#wave-path" x="50" y="0"></use></g>
+            <g class="wave3"><use xlink:href="#wave-path" x="50" y="7"></use></g>
+            </svg>
+        </section>
         <!-- /Hero Section -->
+
+        
         <!-- Services Section -->
         <section id="services" class="services section">
 
@@ -273,6 +215,7 @@
                         <li data-filter=".filter-decals">Vinyl Decals</li>
                         <li data-filter=".filter-lettering">Vehicle Lettering</li>
                         <li data-filter=".filter-ppf">Paint Protection Film</li>
+                        <li data-filter=".filter-wraps">Vehicle Wraps</li>
                     </ul><!-- End Portfolio Filters -->
 
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
@@ -280,8 +223,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-10.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-10.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -289,8 +230,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-9.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-9.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -299,8 +238,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-8.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-8.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -309,8 +246,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-7.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-7.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -319,8 +254,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-1.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-1.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -328,8 +261,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-2.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -337,8 +268,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-3.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-3.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -346,8 +275,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-4.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-4.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -355,8 +282,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-5.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-5.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -364,8 +289,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-6.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-6.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -373,8 +296,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-11.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-11.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -382,8 +303,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-12.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-12.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -391,8 +310,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-13.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-13.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -400,8 +317,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-14.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-14.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -409,8 +324,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-15.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-15jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -418,8 +331,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-16.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-16.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -427,8 +338,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-decals">
                             <img src="./img/portfolio/decal-17.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Tacoma Stripes</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/decal-17.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -438,8 +347,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-lettering">
                             <img src="./img/portfolio/Healey-parts-truck-1.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Parts Delivery Truck</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/Healey-parts-truck-1.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -448,8 +355,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-lettering">
                             <img src="./img/portfolio/Healey-parts-truck-2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Parts Delivery Truck</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/Healey-parts-truck-2.jpg" title="Parts Delivery Truck" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -458,8 +363,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-lettering">
                             <img src="./img/portfolio/Healey-courtesy-shuttle.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Dealership shuttle</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/Healey-courtesy-shuttle.jpg" title="Dealership shuttle" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -468,8 +371,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-lettering">
                             <img src="./img/portfolio/Healey-shuttle.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Dealership shuttle</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/Healey-shuttle.jpg" title="Dealership shuttle" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -478,21 +379,14 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                             <img src="./img/portfolio/Healey-shuttle-2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Dealership shuttle</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/Healey-shuttle-2.jpg" title="Dealership shuttle" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
 
-
-
-
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ppf">
                             <img src="./img/portfolio/PPF1.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Dealership shuttle</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/PPF1.jpg" title="Dealership shuttle" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -501,8 +395,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ppf">
                             <img src="./img/portfolio/PPF2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Dealership shuttle</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/PPF2.jpg" title="Dealership shuttle" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -510,8 +402,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ppf">
                             <img src="./img/portfolio/PPF3.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Dealership shuttle</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/PPF3.jpg" title="Dealership shuttle" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -520,8 +410,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ppf">
                             <img src="./img/portfolio/PPF5.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Dealership shuttle</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/PPF5.jpg" title="Dealership shuttle" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -529,8 +417,6 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ppf">
                             <img src="./img/portfolio/PPF6.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Dealership shuttle</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/PPF6.jpg" title="Dealership shuttle" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -538,49 +424,10 @@
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ppf">
                             <img src="./img/portfolio/PPF7.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Dealership shuttle</h4>
-                                <p>Lorem ipsum, dolor sit</p>
                                 <a href="./img/portfolio/PPF7.jpg" title="Dealership shuttle" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
-
-                       
-                        <!-- End Portfolio Item -->
-
-                        <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="./img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="./img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div> -->
-                        <!-- End Portfolio Item -->
-
-                        <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="./img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Product 3</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="./img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div> -->
-                        <!-- End Portfolio Item -->
-
-                        <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="./img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Branding 3</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="./img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div> -->
-                        <!-- End Portfolio Item -->
-
                     </div><!-- End Portfolio Container -->
 
                 </div>
@@ -591,7 +438,7 @@
         <!-- Call To Action Section -->
         <section id="call-to-action" class="call-to-action section footer-wave pt-0">
             <!-- Waves -->
-            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
             <defs>
                 <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
             </defs>
@@ -601,7 +448,7 @@
             </svg>
             <div class="container">
 
-                <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                <div class="row" data-aos="zoom-in" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom" data-aos-offset="0">
                     <div class="col-xl-9 text-center text-xl-start">
                         <h3>Request a Quote</h3>
                         <p>Need custom signage, vehicle decals, or storefront graphics? We make it easy to bring your brand to life with clean, high-impact vinyl solutions — delivered fast and built to last. Let’s get your project rolling today.</p>
@@ -618,7 +465,7 @@
         <section id="contact" class="contact section">
 
             <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
+            <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
                 <h2>Contact</h2>
                 <p>Contact Us</p>
             </div><!-- End Section Title -->
@@ -695,12 +542,12 @@
         <section id="about" class="about section">
 
             <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
+            <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
                 <h2>About</h2>
                 <p>Who We Are</p>
             </div><!-- End Section Title -->
 
-            <div class="container card-wrapper">
+            <div class="container card-wrapper" data-aos="fade" data-aos-delay="100">
 
                 <div class="row gy-4">
 
@@ -804,7 +651,7 @@
 
     <footer id="footer " class="footer dark-background footer-wave pt-0">
         <!-- Waves -->
-        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
         <defs>
             <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
         </defs>

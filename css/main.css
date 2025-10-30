@@ -300,6 +300,14 @@ h6 {
 
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
+  .header {
+    padding: 15px 0;
+  }
+
+  .header .justify-content-center {
+    justify-content: end !important;
+  }
+
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 28px;
@@ -692,7 +700,7 @@ section,
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(0deg, var(--background-color) 0%, color-mix(in srgb, var(--background-color) 90%, white 10%) 100%);
+  background-color: #f2e9da;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -707,8 +715,8 @@ section,
   flex-direction: column;
   text-align: center;
   position: relative;
-  min-height: 75vh;
-  padding-top: 60px;
+  min-height: 70vh;
+  
 }
 
 .hero h2 {
@@ -742,24 +750,22 @@ section,
 }
 
 .hero .btn-get-started {
+  font-family: var(--heading-font);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 12px 32px;
+  padding: 12px 40px;
   border-radius: 50px;
   transition: 0.5s;
-  line-height: 1;
   margin: 10px;
-  animation-delay: 0.8s;
+  background: var(--accent-color);
   color: var(--contrast-color);
-  border: 2px solid var(--accent-color);
 }
 
 .hero .btn-get-started:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  text-decoration: none;
+  background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+  color: var(--default-color)
 }
 
 @media (min-width: 1024px) {
@@ -775,7 +781,7 @@ section,
 
 @media (max-width: 768px) {
   .hero .carousel-container {
-    min-height: 90vh;
+    min-height: 75vh;
   }
 
   .hero h2 {
@@ -791,9 +797,49 @@ section,
   padding-top: 0px;
 }
 
+.hero-wave .waves {
+  display: block;
+  width: 100%;
+  height: 100px;
+  position: relative;
+  
+  /* transform-origin: top center; */
+}
 
+.hero-wave .wave1 use {
+  animation: move-forever1 10s linear infinite;
+  animation-delay: -2s;
+  fill: #dbf7fd;
+  opacity: 0.8;
+  stroke: white;           /* adds the border */
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
+  
+}
 
-.footer-wave .hero-waves {
+.hero-wave .wave2 use {
+  animation: move-forever2 8s linear infinite;
+  animation-delay: -2s;
+  fill: #dbf7fd;
+  opacity: 0.6;
+  stroke: white;           /* adds the border */
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
+  
+}
+
+.hero-wave .wave3 use {
+  animation: move-forever3 6s linear infinite;
+  animation-delay: -2s;
+  fill: #dbf7fd;
+  stroke: white;           /* adds the border */
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6)); 
+}
+
+/* FOOTER WAVES START HERE */
+
+.footer-wave .waves {
   display: block;
   width: 100%;
   height: 100px;
