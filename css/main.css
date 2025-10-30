@@ -652,7 +652,7 @@ h6 {
   position: absolute;
   width: 11px;
   height: 1px;
-  background: var(--primary-color);
+  background: var(--accent-color);
   animation: strikes 0.2s linear infinite;
 }
 .car .strike2 {
@@ -674,7 +674,7 @@ h6 {
 .car-detail {
   position: absolute;
   display: block;
-  background: var(--primary-color);
+  background: var(--accent-color);
   animation: speed 0.5s linear infinite;
 }
 .car-detail.spoiler {
@@ -683,8 +683,8 @@ h6 {
   top: 7px;
   background: none;
   border: 20px solid transparent;
-  border-bottom: 8px solid var(--primary-color);
-  border-left: 20px solid var(--primary-color);
+  border-bottom: 8px solid var(--default-color);
+  border-left: 20px solid var(--default-color);
 }
 .car-detail.back {
   height: 20px;
@@ -698,7 +698,7 @@ h6 {
   left: 12px;
   border-top-left-radius: 30px;
   border-top-right-radius: 45px 40px;
-  border: 4px solid var(--primary-color);
+  border: 4px solid var(--default-color);
   background: none;
   box-sizing: border-box;
 }
