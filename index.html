@@ -43,7 +43,61 @@
         window.addEventListener('load', () => {
         setTimeout(() => AOS.refresh(), 300);
         });
-        </script>
+    </script>
+
+    <style>
+        .hero-mark { max-height: 18vh; }
+
+        /* container sizing so it doesn’t feel cramped */
+.hero-chips {
+  list-style: none;
+  margin: 12px auto 16px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ← always 2 columns */
+  gap: 10px 12px;
+  max-width: 560px;                      /* keeps lines a good length */
+}
+
+/* chips: minimal, crisp, readable */
+.hero-chips li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2.5vw, 1rem); /* scales a bit on small screens */
+  line-height: 1.2;
+  color: var(--default-color);                        /* dark teal text */
+  background: #fff;    /* subtle glass */
+  border: 2px solid var(--accent-color);
+  
+}
+
+/* hover effect (desktop) */
+@media (hover: hover) {
+  .hero-chips li:hover {
+    transform: translateY(-2px);
+    transition: transform .2s ease, box-shadow .2s ease;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+}
+
+/* if you want tighter look on very small phones, keep 2 cols but shrink spacing */
+@media (max-width: 360px) {
+  .hero-chips {
+    gap: 8px 10px;
+  }
+  .hero-chips li {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+    </style>    
     
 </head>
 <body class="index-page">
@@ -74,15 +128,25 @@
         
             <div id="hero-carousel" class="container carousel carousel-fade" data-bs-ride="carousel">
             <!-- Slide 1 -->
-            <div class="carousel-item active call-to-action">
-                <div class="carousel-container">
-                <img src="./img/noBgWhiteWelcome.png" alt="" style="max-height: 20vh;">
-                <p class="animate__animated animate__fadeInUp pt-4">
-                    We specialize in custom signs and lettering that bring your brand to life. From storefront displays to vehicle wraps, we craft high-quality visuals that stand out and stand the test of time. Proudly serving the Greater Columbus area with reliable service and creative design.
-                </p>
-                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+            <div class="carousel-item active">
+                <div class="carousel-container text-center">
+                    <img src="./img/noBgWhiteWelcome.png" alt="" class="hero-mark" />
+
+                    <ul class="hero-chips" data-aos="fade-up" data-aos-delay="100">
+                    <li>Auto Spa</li>
+                    <li>Vehicle Wraps</li>
+                    <li>Lettering</li>
+                    <li>Graphics</li>
+                    <li>Vehicle Detailing</li>
+                    <li>Ceramic Coating</li>
+                    <li>Paint Protection Film</li>
+                    <li>Pinstriping</li>
+                    </ul>
+
+                    <a href="#about" class="btn-get-started">Learn More</a>
                 </div>
             </div>
+
 
             <!-- <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
