@@ -610,7 +610,7 @@ h6 {
 }
 
 .preloader-content {
-  background-color: #000;
+  background-color: var(--background-color);
   border-radius: 6px;
   z-index: 11111111;
   height: 100%;
@@ -619,8 +619,8 @@ h6 {
 }
 
 .loading-window {
-  color: var(--primary-color);
-  background-color: #000;
+  color: var(--accent-color);
+  background-color: var(--background-color);
   position: absolute;
   left: 50%;
   top: 50%;
