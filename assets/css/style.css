@@ -2535,7 +2535,7 @@ kbd {
 }
 @media (max-width: 575px) {
   .nav-mobile-only {
-    display: flex;
+    display: block;
   }
   
 }
@@ -2781,7 +2781,8 @@ kbd {
 .footer.style-1 .footer-email {
   position: relative;
 }
-.footer.style-1 .footer-email .background-text {
+@media screen and (min-width: 601px){
+  .footer.style-1 .footer-email .background-text {
   z-index: 9;
   opacity: 0.3;
   text-align: center;
@@ -2807,6 +2808,37 @@ kbd {
   -o-background-size: 200px 100%;
   background-size: 200px 100%;
 }
+}
+
+@media screen and (max-width:600px) {
+    .footer.style-1 .footer-email .background-text {
+    z-index: 9;
+    opacity: 0.3;
+    text-align: center;
+    font-family: Oxanium;
+    font-size: 70px !important; 
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #222 0%, #fff 50%, #222 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: rgba(46, 46, 46, 0.7960784314);
+    -webkit-background-size: 200px 100%;
+    -moz-background-size: 200px 100%;
+    -ms-background-size: 200px 100%;
+    -o-background-size: 200px 100%;
+    background-size: 200px 100%;
+  }
+}
+
 .footer.style-1 .footer-email .footer-heading-email {
   position: absolute;
   top: 0;

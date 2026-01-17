@@ -502,7 +502,30 @@
     $background-size: 200px 100%;
     @include prefixer(background-size, $background-size);
   }
-
+  @media screen and (max-width:600px) {
+    .background-text {
+    z-index: 9;
+    opacity: 0.3;
+    position: absolute;
+    text-align: center;
+    font-family: Oxanium;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    display: inline;
+    background: linear-gradient(to right, #222 0%, #fff 50%, #222 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2.5s infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #2e2e2ecb;
+    $background-size: 200px 100%;
+    @include prefixer(background-size, $background-size);
+  }
+  }
   .ak-section-subtitle {
     font-family: Sarabun;
     font-size: 16px;
