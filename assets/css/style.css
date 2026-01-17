@@ -3350,6 +3350,16 @@ kbd {
   justify-content: center;
 }
 
+.hero-logo{
+  width:25%
+}
+
+@media screen and (max-width: 599px){
+  .hero-logo{
+  width:50%
+}
+}
+
 .social-hero {
   position: absolute;
   z-index: 11;
