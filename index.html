@@ -64,9 +64,6 @@
                                 <li>
                                     <a href="#Contact" class="text-hover-animaiton mobile-large-font">Contact</a>
                                 </li>
-                                <li>
-                                    <a href="#FAQ" class="text-hover-animaiton mobile-large-font">Faq</a>
-                                </li>
                                 <li class="nav-mobile-only">
                                     <a href="tel:1-800-915-6271" class="d-flex justify-content-center">
                                         <div class="d-flex align-items-center gap-3">
@@ -488,25 +485,28 @@ From storefront signs to interior displays, our signage is built to be bold, cle
             <div class="ak-height-25 ak-height-lg-20"></div>
             <div class="contact-form" data-aos="fade-up" data-aos-delay="750">
                 <div id="ak-alert"></div>
-                <form method="POST" id="contact-form">
+                <form action="https://formspree.io/f/mwvpgegn" method="POST" id="contactForm">
                     <div class="from-inputs">
                         <div class="type_1">
-                            <label for="name" class="form-label">Full Name</label>
-                            <input type="text" name="Customer Name" id="name" required>
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" name="Customer Name" id="name" placeholder="John Doe" required>
                         </div>
                         <div class="type_1">
-                            <label for="email" class="form-label">Email*</label>
-                            <input type="email" name="Email Address" id="email" required>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="Email Address" id="email" placeholder="johndoe@example.com" required>
                         </div>
                     </div>
                     <div class="from-inputs">
                         <div class="type_1">
-                            <label for="phone" class="form-label">Phone Number*</label>
-                            <input type="text" name="Phone Number" id="phone" required>
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" name="Phone Number" id="phone" placeholder="Your Phone Number"
+                            autocomplete="tel"
+                            pattern="[\d\s\-\+\(\)]{7,}"
+                            title="Please enter a valid phone number" required>
                         </div>
                         <div class="type_1">
-                            <label for="subject" class="form-label">Subject*</label>
-                            <input type="text" name="Subject" id="subject" required>
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" name="Subject" id="subject" placeholder="Subject" required>
                         </div>
                     </div>
                     
@@ -514,10 +514,16 @@ From storefront signs to interior displays, our signage is built to be bold, cle
                     <div class="from-textarea">
                         <div class="type_1">
                             <label for="message" class="form-label">Your Message*</label>
-                            <textarea name="Message" rows="5" id="message" required></textarea>
+                            <textarea name="Message" rows="5" id="message" placeholder="Message" required></textarea>
                         </div>
                     </div>
+                    <!-- Anti-spam honeypot -->
+                    <input type="text" name="_gotcha" style="display:none">
+
                     <div class="ak-height-40 ak-height-lg-20"></div>
+                    <div class="loading" style="display:none;">Loading</div>
+                    <div class="error-message" style="display:none;"></div>
+                    <div class="sent-message" style="display:none;">Your message has been sent. Thank you!</div>
                     <button type="submit" id="submit" name="submit" class="common-btn d-flex mx-auto">Send Message</button>
                 </form>
             </div>
@@ -711,6 +717,61 @@ From storefront signs to interior displays, our signage is built to be bold, cle
     (() => {
         const d=document,s=d.createElement("script");s.type="module";
         s.src="https://w.behold.so/widget.js";d.head.append(s);
+    })();
+    </script>
+     <script>
+
+    (function () {
+        const form = document.getElementById("contactForm");
+        if (!form) return;
+
+        const loading = form.querySelector(".loading");
+        const errorBox = form.querySelector(".error-message");
+        const sentBox = form.querySelector(".sent-message");
+
+        function show(el, display = "block") { if (el) el.style.display = display; }
+        function hide(el) { if (el) el.style.display = "none"; }
+        function setError(msg) {
+        if (!errorBox) return;
+        errorBox.textContent = msg;
+        show(errorBox);
+        }
+
+        form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        hide(errorBox);
+        hide(sentBox);
+        show(loading);
+
+        try {
+            const formData = new FormData(form);
+
+            const res = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+            });
+
+            hide(loading);
+
+            if (res.ok) {
+            show(sentBox);
+            form.reset();
+            } else {
+            let data;
+            try { data = await res.json(); } catch (_) {}
+            const msg =
+                (data && data.errors && data.errors[0] && data.errors[0].message)
+                ? data.errors[0].message
+                : "Sorry — something went wrong sending your message. Please try again.";
+            setError(msg);
+            }
+        } catch (err) {
+            hide(loading);
+            setError("Network error — please check your connection and try again.");
+        }
+        });
     })();
     </script>
 </body>
