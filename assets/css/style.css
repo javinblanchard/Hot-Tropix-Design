@@ -371,8 +371,14 @@ kbd {
   position: absolute;
   width: 117px;
   height: 42px;
-  right: 0%;
-  transition: right 1s ease-in-out;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  transition: transform 1s ease-in-out;
+}
+
+.preloader-content.loaded .car{
+  transform: translateX(120vw);
 }
 .car .strike {
   position: absolute;
@@ -454,11 +460,6 @@ kbd {
 }
 .car-detail.wheel2 {
   left: 82px;
-}
-
-.preloader-content.loaded .car {
-  position: absolute;
-  right: -1000px;
 }
 
 /*--------------------------------------------------------------
@@ -1228,6 +1229,11 @@ kbd {
   -ms-background-size: 200px 100%;
   -o-background-size: 200px 100%;
   background-size: 200px 100%;
+}
+@media (max-width: 600px) {
+  .ak-section-heading.ak-style-1 .background-text {
+    font-size: 70px;
+  }
 }
 .ak-section-heading.ak-style-1 .ak-section-subtitle {
   font-family: Sarabun;
