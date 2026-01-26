@@ -4375,7 +4375,7 @@ kbd {
   width: 5px;
   margin-right: 55px;
   margin-top: 10px;
-  background-color: rgba(255, 255, 255, 0.2901960784);
+  background-color:  #3c31d6;
 }
 
 .testimonal-title {
@@ -4469,7 +4469,7 @@ kbd {
 }
 
 .ak-accordion-item {
-  border: 1px solid rgba(255, 61, 36, 0.3411764706);
+  border: 1px solid  #3c31d6;
 }
 .ak-accordion-item .ak-accordion-title {
   padding: 30px;
