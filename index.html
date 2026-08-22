@@ -44,6 +44,16 @@
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18403630469"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-18403630469');
+    </script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
@@ -1267,6 +1277,10 @@ looking new for years.</p>
                     hide(loading);
 
                     if (res.ok) {
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-18403630469/8hj8CO2V5OUcEIW7xMdE'
+                        });
+
                         show(sentBox);
                         form.reset();
                     } else {
