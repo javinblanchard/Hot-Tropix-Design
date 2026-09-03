@@ -114,10 +114,7 @@
 </head>
 
 
-<body>
-    <h1 class="visually-hidden">
-        Vehicle Detailing, Paint Protection Film & Ceramic Coating in Westerville, OH
-    </h1>
+<body class="home-page">
     <p class="visually-hidden">
         Hot Tropix Auto Spa specializes in vehicle wraps, vehicle graphics, custom lettering,
         paint protection film (PPF), ceramic coating, and professional auto
@@ -268,14 +265,16 @@
 
                     <div class="hero-slider-info style-three">
                         <div class="slider-info">
-                            <img src="assets/img/logo.svg" alt="" class="hero-logo" />
-                            <div class="hero-title">
-                                <h3 class="hero-main-title-1 stle-2">AUTO SPA</h3>
+                            <img src="assets/img/logo.svg" alt="" class="hero-logo">
+                            <div class="hero-title ht-hero-copy">
+                                <p class="ht-hero-eyebrow">Westerville, Ohio</p>
+                                <h1 class="hero-main-title-1 stle-2">Wraps, Paint Protection &amp; Detailing</h1>
+                                <p class="ht-hero-subtitle">Premium automotive care and commercial vehicle branding for Central Ohio.</p>
                             </div>
 
-                            <div class="ak-height-45 ak-height-lg-30"></div>
-                            <div data-swiper-parallax="300">
-                                <a href="#Services" class="common-btn">Get Started</a>
+                            <div class="ht-hero-actions" data-swiper-parallax="300">
+                                <a href="tel:+16145821971" class="common-btn ht-primary-call" data-cta-location="hero">Call (614) 582-1971</a>
+                                <a href="#Services" class="ht-secondary-btn">Explore Services</a>
                             </div>
 
                         </div>
@@ -316,12 +315,35 @@
         </div>
     </section>
 
+    <section class="ht-pathways" aria-labelledby="pathways-title">
+        <div class="container">
+            <div class="ht-pathways-heading">
+                <p class="ht-section-kicker">Start here</p>
+                <h2 id="pathways-title">What can we help with?</h2>
+            </div>
+            <div class="ht-pathway-grid">
+                <a class="ht-pathway-card" href="#protect-services">
+                    <span class="ht-pathway-label">Personal vehicle care</span>
+                    <strong>Protect &amp; Refresh</strong>
+                    <span>Paint protection film, ceramic coating, detailing, and custom accents.</span>
+                    <span class="ht-pathway-link">View protection services →</span>
+                </a>
+                <a class="ht-pathway-card" href="#brand-services">
+                    <span class="ht-pathway-label">Personal and commercial</span>
+                    <strong>Brand &amp; Transform</strong>
+                    <span>Wraps, graphics, lettering, signage, and pinstriping.</span>
+                    <span class="ht-pathway-link">View branding services →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Start Services -->
     <div id="Services" class="ak-height-125 ak-height-lg-80"></div>
     <div class="container">
-        <div class="center-section-heading" data-aos="fade-up">
+        <div class="center-section-heading">
             <div class="ak-section-heading ak-style-1 d-flex justify-content-center">
-                <div class="background-text" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                <div class="background-text">
                     SERVICES
                 </div>
                 <div class="text-md-center">
@@ -333,12 +355,12 @@
             </div>
         </div>
         <div class="ak-height-50 ak-height-lg-50"></div>
-        <div class="row row-cols-xl-3 row-cols-md-2 row-cols-1 g-4 align-items-stretch">
+        <div class="ht-service-group-label" id="brand-services">Services for every vehicle</div>
+        <div class="row row-cols-xl-3 row-cols-md-2 row-cols-1 g-4 align-items-stretch ht-service-grid">
             <div class="col flex-column">
-                <div class="service-card-style-2 type-two h-100 w-100" data-aos="fade-up">
+                <div class="service-card-style-2 type-two h-100 w-100">
                     <div class="service-icon">
-                        <img src="assets/img/icons/graphics.svg" alt="Signage" width="46" height="47" loading="lazy"
-                            decoding="async" />
+                        <img src="assets/img/icons/graphics.svg" alt="Vehicle Graphics" width="46" height="47">
                     </div>
                     <div class="service-desp">
                         <a href="vehicle-graphics.html" class="title">Vehicle Graphics</a>
@@ -350,11 +372,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col flex-column">
-                <div class="service-card-style-2 type-two h-100 w-100" data-aos="fade-up">
+            <div class="col flex-column" id="protect-services">
+                <div class="service-card-style-2 type-two h-100 w-100">
                     <div class="service-icon">
-                        <img src="assets/img/icons/protection.svg" alt="Paint Protection Film" width="56" height="57"
-                            loading="lazy" decoding="async" />
+                        <img src="assets/img/icons/protection.svg" alt="Paint Protection Film" width="56" height="57">
                     </div>
                     <div class="service-desp">
                         <a href="ppf.html" class="title">Paint Protection Film</a>
@@ -368,10 +389,9 @@ looking new for years.</p>
                 </div>
             </div>
             <div class="col flex-column">
-                <div class="service-card-style-2 type-two h-100 w-100" data-aos="fade-up">
+                <div class="service-card-style-2 type-two h-100 w-100">
                     <div class="service-icon">
-                        <img src="assets/img/icons/paint.svg" alt="Ceramic Coating" width="56" height="57"
-                            loading="lazy" decoding="async" />
+                        <img src="assets/img/icons/paint.svg" alt="Ceramic Coating" width="56" height="57">
                     </div>
                     <div class="service-desp">
                         <a href="ceramic-coating.html" class="title">Ceramic Coating</a>
@@ -384,10 +404,9 @@ looking new for years.</p>
                 </div>
             </div>
             <div class="col flex-column">
-                <div class="service-card-style-2 type-two h-100 w-100" data-aos="fade-up">
+                <div class="service-card-style-2 type-two h-100 w-100">
                     <div class="service-icon">
-                        <img src="assets/img/icons/van.svg" alt="Vehicle Wraps" width="46" height="47" loading="lazy"
-                            decoding="async" />
+                        <img src="assets/img/icons/van.svg" alt="Vehicle Wraps" width="46" height="47">
                     </div>
                     <div class="service-desp">
                         <a href="vehicle-wraps.html" class="title">Vehicle Wraps</a>
@@ -401,10 +420,9 @@ looking new for years.</p>
                 </div>
             </div>
             <div class="col flex-column">
-                <div class="service-card-style-2 type-two h-100 w-100" data-aos="fade-up">
+                <div class="service-card-style-2 type-two h-100 w-100">
                     <div class="service-icon">
-                        <img src="assets/img/icons/typography.svg" alt="Vehicle Lettering" width="46" height="47"
-                            loading="lazy" decoding="async" />
+                        <img src="assets/img/icons/typography.svg" alt="Vehicle Lettering" width="46" height="47">
                     </div>
                     <div class="service-desp">
                         <a href="vehicle-lettering.html" class="title">Vehicle Lettering</a>
@@ -418,10 +436,9 @@ looking new for years.</p>
                 </div>
             </div>
             <div class="col flex-column">
-                <div class="service-card-style-2 type-two h-100 w-100" data-aos="fade-up">
+                <div class="service-card-style-2 type-two h-100 w-100">
                     <div class="service-icon">
-                        <img src="assets/img/icons/detailing.svg" alt="Vehicle Detailing" width="56" height="57"
-                            loading="lazy" decoding="async" />
+                        <img src="assets/img/icons/detailing.svg" alt="Vehicle Detailing" width="56" height="57">
                     </div>
                     <div class="service-desp">
                         <a href="vehicle-detailing.html" class="title">Vehicle Detailing</a>
@@ -436,10 +453,9 @@ looking new for years.</p>
 
 
             <div class="col flex-column">
-                <div class="service-card-style-2 type-two h-100 w-100" data-aos="fade-up">
+                <div class="service-card-style-2 type-two h-100 w-100">
                     <div class="service-icon">
-                        <img src="assets/img/icons/billboard.svg" alt="Signage" width="46" height="47" loading="lazy"
-                            decoding="async" />
+                        <img src="assets/img/icons/billboard.svg" alt="Signage" width="46" height="47">
                     </div>
                     <div class="service-desp">
                         <a href="signage.html" class="title">Signage</a>
@@ -454,10 +470,9 @@ looking new for years.</p>
                 </div>
             </div>
             <div class="col flex-column">
-                <div class="service-card-style-2 type-two h-100 w-100" data-aos="fade-up">
+                <div class="service-card-style-2 type-two h-100 w-100">
                     <div class="service-icon">
-                        <img src="assets/img/icons/curvature.svg" alt="Pinstriping" width="46" height="47"
-                            loading="lazy" decoding="async" />
+                        <img src="assets/img/icons/curvature.svg" alt="Pinstriping" width="46" height="47">
                     </div>
                     <div class="service-desp">
                         <a href="pinstriping.html" class="title">Pinstriping</a>
@@ -502,9 +517,8 @@ looking new for years.</p>
                 <button class="ht-filter" type="button" data-filter="ppf" role="tab">PPF</button>
                 <!-- <button class="ht-filter" type="button" data-filter="ceramic" role="tab">Ceramic</button> -->
                 <button class="ht-filter" type="button" data-filter="wraps" role="tab">Wraps</button>
-                <!-- <button class="ht-filter" type="button" data-filter="detailing" role="tab">Detailing</button>
                 <button class="ht-filter" type="button" data-filter="signage" role="tab">Signage</button>
-                <button class="ht-filter" type="button" data-filter="pinstriping" role="tab">Pinstriping</button> -->
+                <button class="ht-filter" type="button" data-filter="pinstriping" role="tab">Pinstriping</button>
             </div>
 
             <div class="ak-height-30 ak-height-lg-20"></div>
@@ -516,7 +530,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Full Color-Change Wrap</h4><p>Gloss finish - Clean edges - Professional install</p>"
                     data-category="wraps">
                     <img src="assets/img/gallery/featured.jpeg" alt="Full color-change wrap" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="4032" height="3024" srcset="assets/img/gallery/featured-640.webp 640w, assets/img/gallery/featured-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges">
                             <span class="ht-badge">Featured</span>
@@ -531,7 +545,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Wraps</h4><p>Precision install - Clean edges - Premium finish</p>"
                     data-category="wraps">
                     <img src="assets/img/gallery/wraps-1.jpg" alt="Vehicle wrap example 1" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="5712" height="4284" srcset="assets/img/gallery/wraps-1-640.webp 640w, assets/img/gallery/wraps-1-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Wraps</span></span>
                         <span class="ht-gallery-title">Vehicle Wraps</span>
@@ -543,7 +557,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Wraps</h4><p>Precision install - Clean edges - Premium finish</p>"
                     data-category="wraps graphics">
                     <img src="assets/img/gallery/wraps-2.jpeg" alt="Vehicle wrap example 2" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="5712" height="4284" srcset="assets/img/gallery/wraps-2-640.webp 640w, assets/img/gallery/wraps-2-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Wraps</span></span>
                         <span class="ht-gallery-title">Vehicle Wraps</span>
@@ -554,7 +568,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Wraps</h4><p>Precision install - Clean edges - Premium finish</p>"
                     data-category="wraps graphics">
                     <img src="assets/img/gallery/wraps-3.jpeg" alt="Vehicle wrap example 3" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="5712" height="4284" srcset="assets/img/gallery/wraps-3-640.webp 640w, assets/img/gallery/wraps-3-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Wraps</span></span>
                         <span class="ht-gallery-title">Vehicle Wraps</span>
@@ -566,7 +580,7 @@ looking new for years.</p>
                     data-category="wraps">
                     <img src="assets/img/gallery/wraps-kevins-car-repair.jpg"
                         alt="Kevin's Car Repair commercial truck wrap installed by Hot Tropix Auto Spa" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="1280" height="960" srcset="assets/img/gallery/wraps-kevins-car-repair-640.webp 640w, assets/img/gallery/wraps-kevins-car-repair-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Wraps</span></span>
                         <span class="ht-gallery-title">Commercial Wrap</span>
@@ -578,7 +592,7 @@ looking new for years.</p>
                     data-category="wraps graphics lettering">
                     <img src="assets/img/gallery/hot-tropix-silverado-tailgate.jpg"
                         alt="Hot Tropix Silverado tailgate graphics with logo, lettering, and phone number"
-                        loading="lazy" decoding="async" />
+                        loading="lazy" decoding="async" width="1280" height="960" srcset="assets/img/gallery/hot-tropix-silverado-tailgate-640.webp 640w, assets/img/gallery/hot-tropix-silverado-tailgate-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Wraps</span></span>
                         <span class="ht-gallery-title">Tailgate Graphics</span>
@@ -590,7 +604,7 @@ looking new for years.</p>
                     data-category="wraps graphics lettering">
                     <img src="assets/img/gallery/hot-tropix-silverado-side.jpg"
                         alt="Hot Tropix Silverado side wrap with brand graphics and lettering" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="1280" height="960" srcset="assets/img/gallery/hot-tropix-silverado-side-640.webp 640w, assets/img/gallery/hot-tropix-silverado-side-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Wraps</span></span>
                         <span class="ht-gallery-title">Truck Wrap</span>
@@ -602,7 +616,7 @@ looking new for years.</p>
                     data-category="wraps graphics">
                     <img src="assets/img/gallery/coughlin-cars-shuttle-wrap.jpg"
                         alt="Coughlin Cars commercial shuttle wrap with red and black graphics" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="1280" height="604" srcset="assets/img/gallery/coughlin-cars-shuttle-wrap-640.webp 640w, assets/img/gallery/coughlin-cars-shuttle-wrap-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Shuttle Wrap</span>
@@ -614,7 +628,7 @@ looking new for years.</p>
                     data-category="graphics lettering">
                     <img src="assets/img/gallery/clear-water-pools-box-truck.jpg"
                         alt="Clear Water Pools box truck with logo, services, website, and phone lettering"
-                        loading="lazy" decoding="async" />
+                        loading="lazy" decoding="async" width="1280" height="960" srcset="assets/img/gallery/clear-water-pools-box-truck-640.webp 640w, assets/img/gallery/clear-water-pools-box-truck-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Lettering</span></span>
                         <span class="ht-gallery-title">Box Truck Lettering</span>
@@ -626,7 +640,7 @@ looking new for years.</p>
                     data-category="wraps graphics">
                     <img src="assets/img/gallery/wow-windowboxes-truck-wrap.jpg"
                         alt="WOW Windowboxes commercial box truck wrap installed in the shop" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="1280" height="960" srcset="assets/img/gallery/wow-windowboxes-truck-wrap-640.webp 640w, assets/img/gallery/wow-windowboxes-truck-wrap-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Wraps</span></span>
                         <span class="ht-gallery-title">Commercial Wrap</span>
@@ -638,7 +652,7 @@ looking new for years.</p>
                     data-category="wraps graphics">
                     <img src="assets/img/gallery/ford-mobile-service-van-wrap.jpg"
                         alt="Ford Mobile Service van wrap with blue and yellow commercial graphics" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="1280" height="960" srcset="assets/img/gallery/ford-mobile-service-van-wrap-640.webp 640w, assets/img/gallery/ford-mobile-service-van-wrap-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Service Van Wrap</span>
@@ -650,7 +664,7 @@ looking new for years.</p>
                     data-category="graphics lettering">
                     <img src="assets/img/gallery/accurate-hvac-van-lettering.jpg"
                         alt="Accurate HVAC red van with white commercial lettering and logo graphics" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="2880" height="3840" srcset="assets/img/gallery/accurate-hvac-van-lettering-640.webp 640w, assets/img/gallery/accurate-hvac-van-lettering-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Lettering</span></span>
                         <span class="ht-gallery-title">Van Lettering</span>
@@ -661,8 +675,7 @@ looking new for years.</p>
                 <!-- <a class="ht-gallery-item ht-gallery-card" href="assets/img/gallery/detailing-1.jpg"
                     data-sub-html="<h4>Interior Detail</h4><p>Deep clean - Odor removal - Like-new feel</p>"
                     data-category="detailing">
-                    <img src="assets/img/gallery/detailing-1.jpg" alt="Interior detailing result" loading="lazy"
-                        decoding="async" />
+                    <img src="assets/img/gallery/detailing-1.jpg" alt="Interior detailing result" loading="lazy" decoding="async">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Detailing</span></span>
                         <span class="ht-gallery-title">Interior Detail</span>
@@ -674,7 +687,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Paint Protection Film</h4><p>High-impact protection - Clean edges</p>"
                     data-category="ppf">
                     <img src="assets/img/gallery/ppf-1.jpg" alt="Paint protection film example 1" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="275" height="183" srcset="assets/img/gallery/ppf-1-640.webp 640w, assets/img/gallery/ppf-1-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">PPF</span></span>
                         <span class="ht-gallery-title">Paint Protection Film</span>
@@ -685,7 +698,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Paint Protection Film</h4><p>High-impact protection - Clean edges</p>"
                     data-category="ppf">
                     <img src="assets/img/gallery/ppf-2.jpg" alt="Paint protection film example 2" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="482" srcset="assets/img/gallery/ppf-2-640.webp 640w, assets/img/gallery/ppf-2-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">PPF</span></span>
                         <span class="ht-gallery-title">Paint Protection Film</span>
@@ -696,7 +709,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Paint Protection Film</h4><p>High-impact protection - Clean edges</p>"
                     data-category="ppf">
                     <img src="assets/img/gallery/ppf-3.jpg" alt="Paint protection film example 3" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/ppf-3-640.webp 640w, assets/img/gallery/ppf-3-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">PPF</span></span>
                         <span class="ht-gallery-title">Paint Protection Film</span>
@@ -707,7 +720,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Paint Protection Film</h4><p>High-impact protection - Clean edges</p>"
                     data-category="ppf">
                     <img src="assets/img/gallery/ppf-4.jpg" alt="Paint protection film example 4" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="1135" height="697" srcset="assets/img/gallery/ppf-4-640.webp 640w, assets/img/gallery/ppf-4-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">PPF</span></span>
                         <span class="ht-gallery-title">Paint Protection Film</span>
@@ -718,7 +731,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Paint Protection Film</h4><p>High-impact protection - Clean edges</p>"
                     data-category="ppf">
                     <img src="assets/img/gallery/ppf-5.jpg" alt="Paint protection film example 5" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="430" srcset="assets/img/gallery/ppf-5-640.webp 640w, assets/img/gallery/ppf-5-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">PPF</span></span>
                         <span class="ht-gallery-title">Paint Protection Film</span>
@@ -728,8 +741,7 @@ looking new for years.</p>
                 <!-- <a class="ht-gallery-item ht-gallery-card" href="assets/img/gallery/ceramic-1.jpg"
                     data-sub-html="<h4>Ceramic Coating</h4><p>Deep gloss - Hydrophobic finish</p>"
                     data-category="ceramic">
-                    <img src="assets/img/gallery/ceramic-1.jpg" alt="Ceramic coating gloss" loading="lazy"
-                        decoding="async" />
+                    <img src="assets/img/gallery/ceramic-1.jpg" alt="Ceramic coating gloss" loading="lazy" decoding="async">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Ceramic</span></span>
                         <span class="ht-gallery-title">Ceramic Coating</span>
@@ -741,7 +753,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Lettering</h4><p>Clean layout - Durable vinyl</p>"
                     data-category="lettering">
                     <img src="assets/img/gallery/lettering-1.jpg" alt="Vehicle lettering example 1" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="4032" height="3024" srcset="assets/img/gallery/lettering-1-640.webp 640w, assets/img/gallery/lettering-1-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Lettering</span></span>
                         <span class="ht-gallery-title">Vehicle Lettering</span>
@@ -752,7 +764,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Lettering</h4><p>Clean layout - Durable vinyl</p>"
                     data-category="lettering">
                     <img src="assets/img/gallery/lettering-2.jpeg" alt="Vehicle lettering example 2" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="4032" height="3024" srcset="assets/img/gallery/lettering-2-640.webp 640w, assets/img/gallery/lettering-2-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Lettering</span></span>
                         <span class="ht-gallery-title">Vehicle Lettering</span>
@@ -763,7 +775,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Lettering</h4><p>Clean layout - Durable vinyl</p>"
                     data-category="lettering">
                     <img src="assets/img/gallery/lettering-3.jpeg" alt="Vehicle lettering example 3" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="4032" height="3024" srcset="assets/img/gallery/lettering-3-640.webp 640w, assets/img/gallery/lettering-3-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Lettering</span></span>
                         <span class="ht-gallery-title">Vehicle Lettering</span>
@@ -774,7 +786,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Lettering</h4><p>Clean layout - Durable vinyl</p>"
                     data-category="lettering">
                     <img src="assets/img/gallery/lettering-4.jpeg" alt="Vehicle lettering example 4" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="4032" height="3024" srcset="assets/img/gallery/lettering-4-640.webp 640w, assets/img/gallery/lettering-4-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Lettering</span></span>
                         <span class="ht-gallery-title">Vehicle Lettering</span>
@@ -785,7 +797,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Lettering</h4><p>Clean layout - Durable vinyl</p>"
                     data-category="lettering">
                     <img src="assets/img/gallery/lettering-5.jpeg" alt="Vehicle lettering example 5" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="4032" height="3024" srcset="assets/img/gallery/lettering-5-640.webp 640w, assets/img/gallery/lettering-5-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Lettering</span></span>
                         <span class="ht-gallery-title">Vehicle Lettering</span>
@@ -796,7 +808,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Lettering</h4><p>Clean layout - Durable vinyl</p>"
                     data-category="lettering">
                     <img src="assets/img/gallery/lettering-6.jpg" alt="Vehicle lettering example 6" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="5712" height="4284" srcset="assets/img/gallery/lettering-6-640.webp 640w, assets/img/gallery/lettering-6-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Lettering</span></span>
                         <span class="ht-gallery-title">Vehicle Lettering</span>
@@ -808,7 +820,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-1.jpg" alt="Vehicle graphics example 1" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/graphics-1-640.webp 640w, assets/img/gallery/graphics-1-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -819,7 +831,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-2.png" alt="Vehicle graphics example 2" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="360" srcset="assets/img/gallery/graphics-2-640.webp 640w, assets/img/gallery/graphics-2-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -830,7 +842,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-3.png" alt="Vehicle graphics example 3" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="360" srcset="assets/img/gallery/graphics-3-640.webp 640w, assets/img/gallery/graphics-3-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -841,7 +853,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-4.jpg" alt="Vehicle graphics example 4" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/graphics-4-640.webp 640w, assets/img/gallery/graphics-4-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -852,7 +864,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-5.jpg" alt="Vehicle graphics example 5" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="570" height="554" srcset="assets/img/gallery/graphics-5-640.webp 640w, assets/img/gallery/graphics-5-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -863,7 +875,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-6.jpg" alt="Vehicle graphics example 6" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="1000" height="684" srcset="assets/img/gallery/graphics-6-640.webp 640w, assets/img/gallery/graphics-6-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -874,7 +886,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-7.jpg" alt="Vehicle graphics example 7" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/graphics-7-640.webp 640w, assets/img/gallery/graphics-7-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -885,7 +897,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-8.jpg" alt="Vehicle graphics example 8" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/graphics-8-640.webp 640w, assets/img/gallery/graphics-8-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -896,7 +908,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-9.jpg" alt="Vehicle graphics example 9" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/graphics-9-640.webp 640w, assets/img/gallery/graphics-9-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -907,7 +919,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-10.jpg" alt="Vehicle graphics example 10" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/graphics-10-640.webp 640w, assets/img/gallery/graphics-10-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -918,7 +930,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-11.jpg" alt="Vehicle graphics example 11" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/graphics-11-640.webp 640w, assets/img/gallery/graphics-11-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -929,7 +941,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-12.jpg" alt="Vehicle graphics example 12" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/graphics-12-640.webp 640w, assets/img/gallery/graphics-12-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -940,7 +952,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-13.jpg" alt="Vehicle graphics example 13" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/graphics-13-640.webp 640w, assets/img/gallery/graphics-13-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -951,7 +963,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-14.jpg" alt="Vehicle graphics example 14" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="480" height="640" srcset="assets/img/gallery/graphics-14-640.webp 640w, assets/img/gallery/graphics-14-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -962,7 +974,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-15.jpg" alt="Vehicle graphics example 15" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="640" height="480" srcset="assets/img/gallery/graphics-15-640.webp 640w, assets/img/gallery/graphics-15-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -973,7 +985,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-16.jpg" alt="Vehicle graphics example 16" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="728" height="410" srcset="assets/img/gallery/graphics-16-640.webp 640w, assets/img/gallery/graphics-16-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -984,7 +996,7 @@ looking new for years.</p>
                     data-sub-html="<h4>Vehicle Graphics</h4><p>Custom design - Sharp install</p>"
                     data-category="graphics">
                     <img src="assets/img/gallery/graphics-17.jpg" alt="Vehicle graphics example 17" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="1280" height="720" srcset="assets/img/gallery/graphics-17-640.webp 640w, assets/img/gallery/graphics-17-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Graphics</span></span>
                         <span class="ht-gallery-title">Vehicle Graphics</span>
@@ -993,7 +1005,7 @@ looking new for years.</p>
 
                 <a class="ht-gallery-item ht-gallery-card" href="assets/img/gallery/wraps-3.jpeg"
                     data-sub-html="<h4>Custom Signage</h4><p>Bold - Clean - Built to last</p>" data-category="signage">
-                    <img src="assets/img/gallery/wraps-3.jpeg" alt="Custom signage project example" loading="lazy" decoding="async" />
+                    <img src="assets/img/gallery/wraps-3.jpeg" alt="Custom signage project example" loading="lazy" decoding="async" width="5712" height="4284" srcset="assets/img/gallery/wraps-3-640.webp 640w, assets/img/gallery/wraps-3-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Signage</span></span>
                         <span class="ht-gallery-title">Custom Signage</span>
@@ -1004,12 +1016,17 @@ looking new for years.</p>
                     data-sub-html="<h4>Pinstriping</h4><p>Hand-applied lines - Clean accents</p>"
                     data-category="pinstriping">
                     <img src="assets/img/gallery/graphics-16.jpg" alt="Pinstriping detail example" loading="lazy"
-                        decoding="async" />
+                        decoding="async" width="728" height="410" srcset="assets/img/gallery/graphics-16-640.webp 640w, assets/img/gallery/graphics-16-1280.webp 1280w" sizes="(max-width: 575px) calc(100vw - 28px), (max-width: 991px) 50vw, 33vw">
                     <span class="ht-gallery-overlay">
                         <span class="ht-gallery-badges"><span class="ht-badge ht-badge-ghost">Pinstriping</span></span>
                         <span class="ht-gallery-title">Pinstriping</span>
                     </span>
                 </a>
+            </div>
+
+            <div class="ht-gallery-more-wrap">
+                <button class="common-btn ht-gallery-more" type="button" aria-controls="htGallery" aria-expanded="false">Show More Work</button>
+                <p class="ht-gallery-count" aria-live="polite"></p>
             </div>
 
             <div class="ak-height-35 ak-height-lg-30"></div>
@@ -1086,7 +1103,12 @@ looking new for years.</p>
         <div class="contact-content">
             <div class="contact-title-section" data-aos="fade-up" data-aos-delay="700">
                 <h2 class="contact-form-title ak-white-color text-uppercase">Contact Us</h2>
-                <h2 class="visually-hidden">Request a Quote</h2>
+                <p class="ht-contact-intro">Estimates are handled by phone so we can understand your vehicle and what you need.</p>
+                <a href="tel:+16145821971" class="ht-contact-call" data-cta-location="contact">
+                    <span>Call for an estimate</span>
+                    <strong>(614) 582-1971</strong>
+                    <small>Monday–Friday, 9AM–5PM</small>
+                </a>
                 <a href="mailto:toddgessner@gmail.com">
                     <div class="d-flex align-items-center gap-2">
                         <div class="heartbeat-icon">
@@ -1182,7 +1204,7 @@ looking new for years.</p>
                         </div>
                     </div>
                     <!-- Anti-spam honeypot -->
-                    <input type="text" name="_gotcha" style="display:none">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
 
                     <div class="ak-height-40 ak-height-lg-20"></div>
                     <div class="loading" style="display:none;">Loading</div>
@@ -1365,6 +1387,8 @@ looking new for years.</p>
                         gtag('event', 'conversion', {
                             'send_to': 'AW-18403630469/8hj8CO2V5OUcEIW7xMdE'
                         });
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({ event: 'contact_form_submit', page: location.pathname });
 
                         show(sentBox);
                         form.reset();
@@ -1431,12 +1455,6 @@ looking new for years.</p>
 </body>
 
 </html>
-
-
-
-
-
-
 
 
 

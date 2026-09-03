@@ -38,10 +38,14 @@
     $(window).trigger("scroll");
     $(window).trigger("resize");
     preloader();
-    AOS.init();
   });
 
   $(function () {
+    // Initialize reveal effects as soon as the document is ready. Waiting for
+    // every image to finish loading can leave AOS content invisible for seconds.
+    if (typeof AOS !== "undefined") {
+      AOS.init();
+    }
     $(window).trigger("resize");
     mainNav();
     stickyHeader();
@@ -79,31 +83,42 @@
  -----------------------------------------------------------------*/
 function mainNav() {
   // Add hamburger toggle
-  $(".ak-nav").append('<span class="ak-munu_toggle"><span></span></span>');
+  $(".ak-nav").append('<button type="button" class="ak-munu_toggle" aria-label="Open navigation menu" aria-expanded="false"><span></span></button>');
 
   // Add dropdown toggles
   $(".menu-item-has-children").append(
-    '<span class="ak-munu_dropdown_toggle"></span>'
+    '<button type="button" class="ak-munu_dropdown_toggle" aria-label="Show services" aria-expanded="false"></button>'
   );
+
+  function closeMobileMenu() {
+    $(".ak-nav_list").slideUp();
+    $(".ak-munu_toggle")
+      .removeClass("ak-toggle_active")
+      .attr({"aria-expanded":"false","aria-label":"Open navigation menu"});
+    $(".ak-munu_dropdown_toggle")
+      .removeClass("active")
+      .attr({"aria-expanded":"false","aria-label":"Show services"});
+    $(".menu-item-has-children").removeClass("active").children("ul").hide();
+    $("body").removeClass("ht-menu-open");
+  }
 
   // ================================
   // Mobile menu toggle (hamburger)
   // ================================
   $(".ak-munu_toggle").on("click", function () {
-    $(this)
-      .toggleClass("ak-toggle_active")
-      .siblings(".ak-nav_list")
-      .slideToggle();
+    const isOpen = $(this).toggleClass("ak-toggle_active").hasClass("ak-toggle_active");
+    $(this).attr("aria-expanded", isOpen ? "true" : "false");
+    $(this).attr("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    $(this).siblings(".ak-nav_list").slideToggle();
+    $("body").toggleClass("ht-menu-open", isOpen);
   });
 
   // ================================
   // ✅ CLOSE MENU AFTER LINK CLICK (NEW)
   // ================================
-  $(".ak-nav_list a[href^='#']").on("click", function () {
-    // Only close on mobile-sized screens
-    if (window.matchMedia("(max-width: 991px)").matches) {
-      $(".ak-nav_list").slideUp();
-      $(".ak-munu_toggle").removeClass("ak-toggle_active");
+  $(".ak-nav_list > li:not(.menu-item-has-children) > a, .ak-nav_list .menu-item-has-children ul a").on("click", function () {
+    if (window.matchMedia("(max-width: 1199.98px)").matches) {
+      closeMobileMenu();
     }
   });
 
@@ -111,8 +126,11 @@ function mainNav() {
   // Dropdown menu toggle
   // ================================
   $(".ak-munu_dropdown_toggle").on("click", function () {
-    $(this).toggleClass("active").siblings("ul").slideToggle();
-    $(this).parent().toggleClass("active");
+    const isOpen = $(this).toggleClass("active").hasClass("active");
+    $(this).attr("aria-expanded", isOpen ? "true" : "false");
+    $(this).attr("aria-label", isOpen ? "Hide services" : "Show services");
+    $(this).siblings("ul").slideToggle();
+    $(this).parent().toggleClass("active", isOpen);
   });
 
   // Extra dropdown section
@@ -232,7 +250,7 @@ function mainNav() {
 
     if ($.exists(".ak-slider-hero-three")) {
       var swiperOptions = {
-        loop: true,
+        loop: $(".ak-slider-hero-three .swiper-slide").length > 1,
         speed: 1200,
         parallax: true,
         zoom: {
@@ -367,7 +385,13 @@ function mainNav() {
      7. Scroll Up
 --------------------------------------------------------------*/
   function scrollUp() {
-    $(".ak-scrollup").on("click", function (e) {
+    const $scrollUp = $(".ak-scrollup").attr({
+      role: "button",
+      tabindex: "0",
+      "aria-label": "Scroll to top"
+    });
+    $scrollUp.on("click keydown", function (e) {
+      if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
       e.preventDefault();
       $("html,body").animate(
         {
@@ -392,7 +416,9 @@ function mainNav() {
 --------------------------------------------------------------*/
   function textAnimation() {
     if ($.exists(".text-hover-animaiton")) {
-      const $textAnimationElements = $(".text-hover-animaiton");
+      const $textAnimationElements = $(".text-hover-animaiton").not(
+        ".ak-nav_list .text-hover-animaiton, .ht-footer-panel .text-hover-animaiton"
+      );
       if ($textAnimationElements.length > 0) {
         $textAnimationElements.each((index, element) => {
           const $element = $(element);
@@ -484,7 +510,9 @@ function mainNav() {
       const $window = $(window);
       const $sidebar = $(".sidebar");
       const sidebarHeight = $sidebar.innerHeight();
-      const footerOffsetTop = $(".scroll-end-point").offset().top;
+      const $scrollEndPoint = $(".scroll-end-point");
+      if (!$sidebar.length || !$scrollEndPoint.length) return;
+      const footerOffsetTop = $scrollEndPoint.offset().top;
       const sidebarOffset = $sidebar.offset();
       const footerThreshold = footerOffsetTop - sidebarHeight;
       let isScrolling = false;
@@ -887,3 +915,234 @@ function mainNav() {
   }
   //end the scripts
 })(jQuery);
+
+/* Hot Tropix shared conversion and accessibility enhancements */
+(function () {
+  "use strict";
+
+  const body = document.body;
+  const isHome = body.classList.contains("home-page");
+  if (!isHome && document.querySelector(".common-page-title")) {
+    body.classList.add("service-page");
+  }
+
+  if (isHome) {
+    const portfolioSpacer = document.getElementById("Portfolio");
+    const portfolioSection = portfolioSpacer && portfolioSpacer.nextElementSibling;
+    const footer = document.querySelector("footer");
+    if (portfolioSpacer && portfolioSection && footer) footer.before(portfolioSpacer, portfolioSection);
+  }
+
+  document.querySelectorAll('.ak-site_branding img[alt="..."]').forEach(img => img.alt = "Hot Tropix Auto Spa");
+  document.querySelectorAll('img[src$="phone.svg"][alt="..."]').forEach(img => img.alt = "");
+  document.querySelectorAll('a[href*="instagram.com"]').forEach(link => {
+    if (!link.getAttribute("aria-label")) link.setAttribute("aria-label", "Hot Tropix Auto Spa on Instagram");
+  });
+
+  if (!document.querySelector(".ht-skip-link")) {
+    const skip = document.createElement("a");
+    skip.className = "ht-skip-link";
+    skip.href = isHome ? "#Services" : "#main-content";
+    skip.textContent = "Skip to main content";
+    body.prepend(skip);
+  }
+
+  const mainTarget = document.querySelector(".sticky-content") || document.querySelector("#Services");
+  if (mainTarget && !mainTarget.id) mainTarget.id = "main-content";
+
+  if (!document.querySelector(".ht-mobile-callbar")) {
+    const callbar = document.createElement("a");
+    callbar.className = "ht-mobile-callbar";
+    callbar.href = "tel:+16145821971";
+    callbar.dataset.ctaLocation = "mobile_sticky";
+    callbar.setAttribute("aria-label", "Call Hot Tropix Auto Spa at 614-582-1971");
+    callbar.innerHTML = '<img src="assets/img/phone.svg" alt=""><span><small>Call for an estimate</small><strong>(614) 582-1971</strong></span>';
+    body.append(callbar);
+  }
+
+  if (window.hotTropixForwardingNumber && window.hotTropixApplyGoogleForwardingNumber) {
+    window.hotTropixApplyGoogleForwardingNumber(
+      window.hotTropixForwardingNumber.formattedNumber,
+      window.hotTropixForwardingNumber.mobileNumber
+    );
+  }
+
+  const serviceImages = {
+    "vehicle-wraps.html": "../img/gallery/featured-1280.webp",
+    "vehicle-graphics.html": "../img/gallery/ford-mobile-service-van-wrap-1280.webp",
+    "vehicle-lettering.html": "../img/gallery/accurate-hvac-van-lettering-1280.webp",
+    "ppf.html": "../img/gallery/ppf-3-1280.webp",
+    "ceramic-coating.html": "../img/gallery/featured-1280.webp",
+    "vehicle-detailing.html": "../img/gallery/graphics-9-1280.webp",
+    "signage.html": "../img/gallery/graphics-17-1280.webp",
+    "pinstriping.html": "../img/gallery/graphics-16-1280.webp"
+  };
+  const serviceWork = {
+    "vehicle-wraps.html": ["featured.jpeg", "wraps-kevins-car-repair.jpg", "wow-windowboxes-truck-wrap.jpg"],
+    "vehicle-graphics.html": ["ford-mobile-service-van-wrap.jpg", "coughlin-cars-shuttle-wrap.jpg", "graphics-14.jpg"],
+    "vehicle-lettering.html": ["accurate-hvac-van-lettering.jpg", "clear-water-pools-box-truck.jpg", "lettering-5.jpeg"],
+    "ppf.html": ["ppf-1.jpg", "ppf-3.jpg", "ppf-5.jpg"],
+    "ceramic-coating.html": ["featured.jpeg", "graphics-9.jpg"],
+    "vehicle-detailing.html": ["featured.jpeg", "graphics-9.jpg"],
+    "signage.html": ["graphics-17.jpg", "clear-water-pools-box-truck.jpg", "wraps-3.jpeg"],
+    "pinstriping.html": ["graphics-16.jpg", "graphics-15.jpg", "graphics-10.jpg"]
+  };
+
+  if (body.classList.contains("service-page")) {
+    const file = location.pathname.split("/").pop();
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({event: "service_view", service: file.replace(/\.html$/, "")});
+    const titleWrap = document.querySelector(".common-page-title");
+    const titleContainer = titleWrap && titleWrap.closest(".container");
+    const seoHeading = document.querySelector(".sticky-content h1.visually-hidden");
+    const visualHeading = titleWrap && titleWrap.querySelector(".page-title");
+    if (seoHeading && visualHeading) {
+      seoHeading.textContent = visualHeading.textContent.trim();
+      seoHeading.className = "page-title";
+      visualHeading.replaceWith(seoHeading);
+    }
+    if (titleContainer) {
+      titleContainer.classList.add("ht-service-hero");
+      if (serviceImages[file]) titleContainer.style.setProperty("--ht-service-image", `url('${serviceImages[file]}')`);
+      const call = document.createElement("a");
+      call.href = "tel:+16145821971";
+      call.className = "common-btn ht-service-hero-call";
+      call.dataset.ctaLocation = "service_hero";
+      call.textContent = "Call (614) 582-1971";
+      titleWrap.append(call);
+    }
+
+    const nav = document.querySelector(".next-prev-btn");
+    const footer = document.querySelector("footer");
+    if (nav && footer) {
+      const related = document.createElement("nav");
+      related.className = "container ht-related-services";
+      related.setAttribute("aria-label", "Browse related services");
+      related.innerHTML = "<p>Explore another service</p>";
+      related.append(nav);
+      footer.before(related);
+    }
+
+    const ctaContainer = document.querySelector(".cta")?.closest(".container");
+    if (ctaContainer && serviceWork[file]) {
+      const workSection = document.createElement("section");
+      workSection.className = "container ht-service-work";
+      workSection.setAttribute("aria-labelledby", "service-work-title");
+      const cards = serviceWork[file].map((name, index) => {
+        const stem = name.replace(/\.[^.]+$/, "");
+        return `<figure><img src="assets/img/gallery/${name}" srcset="assets/img/gallery/${stem}-640.webp 640w, assets/img/gallery/${stem}-1280.webp 1280w" sizes="(max-width: 767px) calc(100vw - 48px), 33vw" loading="lazy" decoding="async" alt="${titleWrap?.querySelector('.page-title')?.textContent || 'Hot Tropix'} project example ${index + 1}"></figure>`;
+      }).join("");
+      workSection.innerHTML = `<p class="ht-section-kicker">Recent work</p><h2 id="service-work-title">See the service in action</h2><div class="ht-service-work-grid">${cards}</div>`;
+      ctaContainer.before(workSection);
+
+      const warmServiceWork = function () {
+        workSection.querySelectorAll("img").forEach(img => {
+          img.loading = "eager";
+          img.fetchPriority = "low";
+        });
+      };
+      if ("IntersectionObserver" in window) {
+        const workObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+            warmServiceWork();
+            workObserver.disconnect();
+          }
+        }, {rootMargin: "1400px 0px"});
+        workObserver.observe(workSection);
+      } else {
+        warmServiceWork();
+      }
+    }
+  }
+
+  const gallery = document.getElementById("htGallery");
+  if (gallery) {
+    const moreButton = document.querySelector(".ht-gallery-more");
+    const countLabel = document.querySelector(".ht-gallery-count");
+    const allItems = Array.from(gallery.querySelectorAll(".ht-gallery-item"));
+    const initialCount = matchMedia("(max-width: 575px)").matches ? 6 : 12;
+    let expanded = false;
+
+    function optimizedGallerySource(item) {
+      const image = item.querySelector("img");
+      const candidates = (image?.getAttribute("srcset") || "").split(",").map(candidate => candidate.trim()).filter(Boolean);
+      return candidates.length ? candidates[candidates.length - 1].split(/\s+/)[0] : image?.getAttribute("src");
+    }
+
+    function warmGalleryItem(item) {
+      const image = item.querySelector("img");
+      if (!image) return;
+      image.loading = "eager";
+      image.fetchPriority = "low";
+    }
+
+    // Lightbox views do not need the 3–5 MB camera originals. The 1280px
+    // WebP variants are sharp on screen and open much faster on mobile.
+    allItems.forEach(item => {
+      const optimizedSource = optimizedGallerySource(item);
+      if (optimizedSource) item.setAttribute("href", optimizedSource);
+    });
+
+    function applyGalleryLimit() {
+      const activeFilter = document.querySelector(".ht-filter.is-active")?.dataset.filter || "all";
+      const matching = allItems.filter(item => activeFilter === "all" || (item.dataset.category || "").split(/\s+/).includes(activeFilter));
+      const visibleItems = matching.slice(0, expanded ? matching.length : initialCount);
+      allItems.forEach(item => item.classList.add("is-deferred"));
+      visibleItems.forEach(item => {
+        item.classList.remove("is-deferred");
+        warmGalleryItem(item);
+      });
+      if (moreButton) {
+        const hasMore = matching.length > initialCount;
+        moreButton.hidden = !hasMore;
+        moreButton.textContent = expanded ? "Show Less Work" : "Show More Work";
+        moreButton.setAttribute("aria-expanded", expanded ? "true" : "false");
+      }
+      if (countLabel) countLabel.textContent = `Showing ${Math.min(matching.length, expanded ? matching.length : initialCount)} of ${matching.length} projects`;
+    }
+
+    document.querySelectorAll(".ht-filter").forEach(button => button.addEventListener("click", function () {
+      expanded = false;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: "gallery_filter", filter: button.dataset.filter || "all"});
+      requestAnimationFrame(applyGalleryLimit);
+    }));
+    if (moreButton) moreButton.addEventListener("click", function () {
+      expanded = !expanded;
+      applyGalleryLimit();
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: "gallery_expand", expanded});
+    });
+    applyGalleryLimit();
+  }
+
+  if (window.hotTropixForwardingNumber && window.hotTropixApplyGoogleForwardingNumber) {
+    window.hotTropixApplyGoogleForwardingNumber(
+      window.hotTropixForwardingNumber.formattedNumber,
+      window.hotTropixForwardingNumber.mobileNumber
+    );
+  }
+
+  document.addEventListener("click", function (event) {
+    const link = event.target.closest("a");
+    if (!link) return;
+    if (link.href.startsWith("tel:")) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: "phone_click", page: location.pathname, cta_location: link.dataset.ctaLocation || "content"});
+    }
+    if (link.href.includes("maps.apple.com")) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: "directions_click", page: location.pathname});
+    }
+  });
+
+  function settleHash() {
+    if (!location.hash) return;
+    const target = document.querySelector(location.hash);
+    if (target) target.scrollIntoView({block: "start"});
+  }
+  window.addEventListener("load", function () {
+    settleHash();
+    setTimeout(settleHash, 750);
+  });
+})();

@@ -50,6 +50,11 @@
   function applyGoogleForwardingNumber(formattedNumber, mobileNumber) {
     if (!formattedNumber) return;
 
+    window.hotTropixForwardingNumber = {
+      formattedNumber: formattedNumber,
+      mobileNumber: mobileNumber || normalizeDigits(formattedNumber)
+    };
+
     if (!document.body) {
       document.addEventListener(
         "DOMContentLoaded",
@@ -64,6 +69,8 @@
     replaceVisibleNumbers(formattedNumber);
     replaceCallableNumbers(mobileNumber || normalizeDigits(formattedNumber));
   }
+
+  window.hotTropixApplyGoogleForwardingNumber = applyGoogleForwardingNumber;
 
   if (typeof gtag === "function") {
     gtag("config", "AW-18403630469/nWKiCLoR4uUcEIW7xMdE", {
